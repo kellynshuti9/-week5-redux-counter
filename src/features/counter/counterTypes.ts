@@ -1,7 +1,6 @@
-// src/features/counter/counterTypes.ts
 export const INCREMENT = 'counter/increment';
 export const DECREMENT = 'counter/decrement';
-export const RESET = 'counter/reset';
+export const RESET     = 'counter/reset';
 
 export interface CounterState {
   value: number;
