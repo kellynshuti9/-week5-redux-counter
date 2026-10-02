@@ -1,10 +1,9 @@
-import { Counter } from './components/Counter';
-import './App.css';
+import Counter from "./components/Counter";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Redux Counter</h1>
+    <div>
+      <h1>React + Redux + TypeScript</h1>
       <Counter />
     </div>
   );
