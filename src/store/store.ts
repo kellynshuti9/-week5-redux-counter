@@ -1,10 +1,13 @@
 import { legacy_createStore as createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
 import { rootReducer } from './rootReducer';
+import logger from 'redux-logger';
 
-export const store = createStore(
-  rootReducer,
-  applyMiddleware(logger as any)
-);
+const middlewares = import.meta.env.DEV
+  ? applyMiddleware((logger as any).default ?? (logger as any))
+  : undefined;
+
+export const store = middlewares
+  ? createStore(rootReducer, middlewares)
+  : createStore(rootReducer);
 
 export type AppDispatch = typeof store.dispatch;
