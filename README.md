@@ -32,23 +32,23 @@ This project demonstrates how to:
 
 ```
 .
+.
 ├── src/
 │   ├── components/
-│   │   └── Counter.tsx              # UI: reads state, dispatches actions
-│   ├── features/
-│   │   └── counter/
-│   │       ├── counterActions.ts    # Action creators: increment, decrement, reset
-│   │       ├── counterReducer.ts    # Reducer: handles counter state transitions
-│   │       └── counterTypes.ts      # Action types + TypeScript interfaces
+│   │   ├── Counter.tsx              # UI component
+│   │   └── Counter.module.css       # Scoped styles
 │   ├── store/
-│   │   ├── rootReducer.ts           # combineReducers + RootState type
-│   │   └── store.ts                 # createStore + middleware + AppDispatch type
-│   ├── App.tsx                      # Root component rendering <Counter />
-│   ├── main.tsx                     # Entry point wrapping <App /> in <Provider>
-│   └── index.css                    # Global styles
+│   │   ├── actions/
+│   │   │   └── counterActions.ts    # Action creators
+│   │   ├── reducers/
+│   │   │   ├── counterReducer.ts    # Counter reducer
+│   │   │   └── index.ts             # combineReducers → rootReducer
+│   │   └── store.ts                 # createStore + middleware
+│   ├── App.tsx
+│   ├── main.tsx                     # Provider wrap
+│   └── index.css
 ├── index.html
 ├── package.json
-├── tsconfig.json
 └── README.md
 ```
 
